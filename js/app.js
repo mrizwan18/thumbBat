@@ -23,8 +23,6 @@ jQuery(document).ready(function($) {
 function enableToss(){
   console.log("check");
   document.getElementById("coin").style.pointerEvents = "auto";
-  document.getElementById("coin").style.border ="4px solid rgb(77, 240, 86,0.5)";
-  document.getElementById("coin").style.borderRadius = "50%";
 };
 
 function loadGame() {

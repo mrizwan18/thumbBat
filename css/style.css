@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Asap:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 
 * {
   padding: 0;
@@ -6,8 +7,8 @@
 }
 
 body {
-  font-family: 'Asap', sans-serif;
-  background: #E0E0E0;
+  font-family: 'Montserrat', sans-serif;
+  background: #1a1a1a;
 }
 
 .load {
@@ -32,7 +33,7 @@ body {
 }
 
 .welcome {
-  color: #9C2D35;
+  color: #fefefe;
   font-size: 40px;
   font-weight: bolder;
   margin-bottom: 20px;
@@ -45,19 +46,21 @@ body {
 
 .btn-play {
   color: #fff;
-  background: #9C2D35;
+  background: transparent;
   padding: 15px;
   font-weight: bolder;
   font-size: 20px;
   margin-top: 90px;
   padding-left: 20px;
   padding-right: 20px;
+  border: 2px solid #fefefe;
   -webkit-animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) infinite alternate both;
   animation: pop 0.8s cubic-bezier(0.370, 0.000, 0.745, 0.715) infinite alternate both;
 }
 
 .btn-play:hover {
-  color: #E0E0E0;
+  background: #fefefe;
+  color: #1a1a1a;
 }
 
 .gameContainer {
@@ -69,33 +72,62 @@ body {
 }
 
 .users {
-  color: #9C2D35;
+  color: #fefefe;
   padding: 0;
   margin-top: 40px;
   position: relative;
 }
 
+.social {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+}
+
+.social.fb {
+  border: 2.5px solid rgb(52, 55, 214);
+}
+
+.count {
+  color: white;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.count.fb {
+  background-color: rgb(52, 55, 214);
+  background-size: cover;
+}
+
 .btn-choice {
   margin-top: 30px;
-  background: #9C2D35;
+  background: transparent;
   color: white;
-  border: 0.5px solid white;
+  font-size: 14px;
+  font-weight: bolder;
+  border: 2px solid #fefefe;
   box-shadow: none !important;
   padding: 10px 15px;
 }
 
 .btn-choice:hover {
-  background: #9C2D35;
-  color: #E0E0E0;
+  background: #fefefe;
+  color: #1a1a1a;
   cursor: pointer;
 }
 
 .btn-choice:not(:disabled):not(.disabled):active,
 .btn-choice:not(:disabled):not(.disabled).active,
 .show>.btn-choice.dropdown-toggle {
-  color: #E0E0E0;
-  background-color: rgb(105, 14, 20);
-  border-color: white;
+  color: #1a1a1a;
+  background-color: #bababa;
+  border-color: #fefefe;
 }
 
 
@@ -148,7 +180,7 @@ body {
 
 .intro {
   text-align: center;
-  background: white;
+  background: #1a1a1a;
   padding: 5px;
 }
 
@@ -174,7 +206,7 @@ body {
   -moz-animation: draw 2.5s ease-in forwards;
   -o-animation: draw 2.5s ease-in forwards;
   font-weight: bold;
-  font-family: "Asap", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 @keyframes draw {
@@ -414,28 +446,28 @@ body {
 
 @-webkit-keyframes flipHeads {
   from {
-    -webkit-transform: rotateY(0);
-    -moz-transform: rotateY(0);
-    transform: rotateY(0);
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    transform: rotateX(0);
   }
 
   to {
-    -webkit-transform: rotateY(1800deg);
-    -moz-transform: rotateY(1800deg);
-    transform: rotateY(1800deg);
+    -webkit-transform: rotateX(1800deg);
+    -moz-transform: rotateX(1800deg);
+    transform: rotateX(1800deg);
   }
 }
 
 @-webkit-keyframes flipTails {
   from {
-    -webkit-transform: rotateY(0);
-    -moz-transform: rotateY(0);
-    transform: rotateY(0);
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    transform: rotateX(0);
   }
 
   to {
-    -webkit-transform: rotateY(1980deg);
-    -moz-transform: rotateY(1980deg);
-    transform: rotateY(1980deg);
+    -webkit-transform: rotateX(1980deg);
+    -moz-transform: rotateX(1980deg);
+    transform: rotateX(1980deg);
   }
 }
