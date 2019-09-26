@@ -1,8 +1,8 @@
-jQuery(document).ready(function($) {
-  $("#coin").on("click", function() {
+jQuery(document).ready(function ($) {
+  $("#coin").on("click", function () {
     var flipResult = Math.random();
     $("#coin").removeClass();
-    setTimeout(function() {
+    setTimeout(function () {
       if (flipResult <= 0.5) {
         $("#coin").addClass("heads");
         setTimeout(() => {
@@ -20,12 +20,18 @@ jQuery(document).ready(function($) {
   });
 });
 
-function enableToss(){
-  console.log("check");
-  document.getElementById("coin").style.pointerEvents = "auto";
+function enableToss() {
+  document.getElementById("coin").style.display = "block";
+  let old = document.getElementById("coin").style.animation;
+  document.getElementById("coin").style.animation = "scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both";
+  setTimeout(() => {
+    document.getElementById("coin").style.animation=old;
+  }, 1000);
 };
+
+purify(content, css, options)
 
 function loadGame() {
   document.getElementsByClassName("load")[0].style.display = "none";
-  document.getElementsByClassName("gameContainer")[0].style.display = "block";
+  document.getElementsByClassName("toss")[0].style.display = "block";
 }

@@ -63,7 +63,7 @@ body {
   color: #1a1a1a;
 }
 
-.gameContainer {
+.toss {
   display: none;
 }
 
@@ -77,6 +77,11 @@ body {
   margin-top: 40px;
   position: relative;
 }
+
+.gold {
+  color: rgb(248, 217, 95);
+}
+
 
 .social {
   border-radius: 50%;
@@ -133,8 +138,8 @@ body {
 
 .player {
   position: absolute;
-  top: 0;
-  left: 470px;
+  top: 40;
+  left: 83%;
   animation: move-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -145,12 +150,6 @@ body {
   animation: move-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-#result {
-  font-weight: bolder;
-  color: #9C2D35;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
 
 
 @keyframes move-left {
@@ -181,23 +180,16 @@ body {
 .intro {
   text-align: center;
   background: #1a1a1a;
-  padding: 5px;
+  margin-top: 20px;
 }
 
-.intro #NameContainer {
+.intro #NameSvg {
   position: relative;
-  height: 58px;
-  width: 354px;
-  margin: 30px auto;
+  height: 58pt;
+  width: 300pt;
 }
 
-.intro #NameContainer #NameSvg {
-  position: relative;
-  height: 58px;
-  width: 354px;
-}
-
-.intro #NameContainer #NameSvg .name-tag {
+.intro #NameSvg .name-tag {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   fill-opacity: 0;
@@ -387,7 +379,7 @@ body {
   height: 100px;
   cursor: pointer;
   margin-top: 200px;
-  pointer-events: none;
+  display: none;
 }
 
 #coin div {
@@ -469,5 +461,17 @@ body {
     -webkit-transform: rotateX(1980deg);
     -moz-transform: rotateX(1980deg);
     transform: rotateX(1980deg);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
