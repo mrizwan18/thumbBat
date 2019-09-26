@@ -67,9 +67,6 @@ body {
   display: none;
 }
 
-.modal-change {
-  background: rgba(255, 255, 255, 0.7) !important;
-}
 
 .users {
   color: #fefefe;
@@ -81,7 +78,6 @@ body {
 .gold {
   color: rgb(248, 217, 95);
 }
-
 
 .social {
   border-radius: 50%;
@@ -135,6 +131,23 @@ body {
   border-color: #fefefe;
 }
 
+.btn-modal {
+  margin-top: 30px;
+  background: transparent;
+  color: rgb(248, 217, 95);
+  font-size: 14px;
+  font-weight: bolder;
+  border: 2px solid rgb(248, 217, 95);
+  box-shadow: none !important;
+  padding: 10px 15px;
+}
+
+.btn-modal:hover {
+  background: rgb(248, 217, 95);
+  color: #fff;
+  cursor: pointer;
+}
+
 
 .player {
   position: absolute;
@@ -148,6 +161,10 @@ body {
   top: 0;
   right: 470px;
   animation: move-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.marg-btn {
+  align-content: center;
 }
 
 
