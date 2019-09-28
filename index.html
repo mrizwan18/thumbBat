@@ -83,7 +83,7 @@
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-dialog-scrollable " role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">INSTRUCTIONS</h5>
@@ -95,18 +95,24 @@
                 <h2 id="result"></h2>
                 <div class="selectInnings">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-bat">
-                      <input type="radio" name="options" id="bat" autocomplete="off"> Bat
+                    <label class="btn btn-innings">
+                      <input type="radio" name="options" id="bat" autocomplete="off" onchange="startGame()"> Bat
                     </label>
-                    <label class="btn btn-bowl">
-                      <input type="radio" name="options" id="bowl" autocomplete="off"> Bowl
+                    <label class="btn btn-innings">
+                      <input type="radio" name="options" id="bowl" autocomplete="off" onchange="startGame()"> Bowl
                     </label>
                   </div>
                 </div>
+                <ul>
+                  <li>It's just like good ol' days </li>
+                  <li>Hit a key on keyboard from 1-6 to bowl/bat</li>
+                  <li>If you and computer land the same number, innings is over </li>
+                  <li>Just hit the Start and you will understand the rest </li>
+                </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-modal cancel" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-modal start">Start</button>
+                <button type="button" class="btn btn-modal start" id="startGame" onclick="startGame()">Start</button>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
     }
     else
       toss_val = "Chaand";
-    var flipResult = Math.random(0,1);
+    var flipResult = Math.random(0, 1);
     console.log(flipResult);
     $("#coin").removeClass();
     setTimeout(function () {
@@ -23,9 +23,11 @@ jQuery(document).ready(function ($) {
           else {
             document.getElementsByClassName("selectInnings")[0].style.display = "none";
             document.getElementById("result").innerHTML = "You Lost the toss";
+            player = 1;
+            document.getElementById("startGame").style.pointerEvents = "auto";
           }
           $("#exampleModalLong").modal("show");
-        }, 2800);
+        }, 3500);
       } else {
         $("#coin").addClass("tails");
         setTimeout(() => {
@@ -36,9 +38,11 @@ jQuery(document).ready(function ($) {
           else {
             document.getElementsByClassName("selectInnings")[0].style.display = "none";
             document.getElementById("result").innerHTML = "You Lost the toss";
+            player = 1;
+            document.getElementById("startGame").style.pointerEvents = "auto";
           }
           $("#exampleModalLong").modal("show");
-        }, 2800);
+        }, 3500);
       }
     }, 100);
   });
@@ -55,4 +59,8 @@ function enableToss() {
 function loadGame() {
   document.getElementsByClassName("load")[0].style.display = "none";
   document.getElementsByClassName("toss")[0].style.display = "block";
+}
+
+function startGame() {
+  document.getElementById("startGame").style.pointerEvents = "auto";
 }
