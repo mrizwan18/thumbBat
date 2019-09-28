@@ -93,10 +93,20 @@
               </div>
               <div class="modal-body">
                 <h2 id="result"></h2>
+                <div class="selectInnings">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-bat">
+                      <input type="radio" name="options" id="bat" autocomplete="off"> Bat
+                    </label>
+                    <label class="btn btn-bowl">
+                      <input type="radio" name="options" id="bowl" autocomplete="off"> Bowl
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-modal" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-modal">Start</button>
+                <button type="button" class="btn btn-modal cancel" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-modal start">Start</button>
               </div>
             </div>
           </div>
@@ -116,7 +126,7 @@
             </div>
 
           </div>
-          
+
         </div>
         <div id="coin">
           <div class="side-a"></div>
