@@ -96,10 +96,10 @@
                 <div class="selectInnings">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-innings">
-                      <input type="radio" name="options" id="bat" autocomplete="off" onchange="startGame()"> Bat
+                      <input type="radio" name="options" id="bat" autocomplete="off" onchange="selectToss()"> Bat
                     </label>
                     <label class="btn btn-innings">
-                      <input type="radio" name="options" id="bowl" autocomplete="off" onchange="startGame()"> Bowl
+                      <input type="radio" name="options" id="bowl" autocomplete="off" onchange="selectToss()"> Bowl
                     </label>
                   </div>
                 </div>
@@ -145,7 +145,8 @@
         </p>
         <img src="./assets/mainBack.png" class="img-fluid img-responsive" />
         <br>
-        <button class="btn btn-play" type="submit" onclick="loadGame()">P L A Y</button>
+        <button class="btn btn-play" type="submit" onclick="loadGame()">Play as a Guest</button>
+        <button class="btn btn-play" type="submit" onclick="loadGame()">Login</button>
       </div>
     </div>
   </div>

@@ -24,6 +24,7 @@ jQuery(document).ready(function ($) {
             document.getElementsByClassName("selectInnings")[0].style.display = "none";
             document.getElementById("result").innerHTML = "You Lost the toss";
             player = 1;
+            document.getElementById("startGame").style.opacity = 1;
             document.getElementById("startGame").style.pointerEvents = "auto";
           }
           $("#exampleModalLong").modal("show");
@@ -39,6 +40,7 @@ jQuery(document).ready(function ($) {
             document.getElementsByClassName("selectInnings")[0].style.display = "none";
             document.getElementById("result").innerHTML = "You Lost the toss";
             player = 1;
+            document.getElementById("startGame").style.opacity = 1;
             document.getElementById("startGame").style.pointerEvents = "auto";
           }
           $("#exampleModalLong").modal("show");
@@ -61,6 +63,15 @@ function loadGame() {
   document.getElementsByClassName("toss")[0].style.display = "block";
 }
 
-function startGame() {
+function selectToss() {
+  if (document.getElementById("bat").checked) {
+    player=2;
+  }
+  else
+    player=1;
+  document.getElementById("startGame").style.opacity = 1;
   document.getElementById("startGame").style.pointerEvents = "auto";
+}
+function startGame() {
+  console.log("OK");
 }

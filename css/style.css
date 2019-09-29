@@ -39,17 +39,20 @@ body {
   padding: 15px;
   font-weight: bolder;
   font-size: 20px;
-  margin-top: 90px;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-bottom: 5px;
   padding-left: 20px;
   padding-right: 20px;
   border: 2px solid #fefefe;
-  -webkit-animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) infinite alternate both;
-  animation: pop 0.8s cubic-bezier(0.370, 0.000, 0.745, 0.715) infinite alternate both;
+
 }
 
 .btn-play:hover {
   background: #fefefe;
   color: #1a1a1a;
+  -webkit-animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) both;
+  animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) both;
 }
 
 .toss {
@@ -138,8 +141,10 @@ body {
   background: #d9534f;
 }
 
+
 .btn-modal.start {
   background: #5cb85c;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -198,6 +203,7 @@ li {
   padding: 12px 0;
   box-sizing: border-box;
 }
+
 li::before {
   content: counters(index, ".", decimal-leading-zero);
   font-size: 1.3rem;
@@ -215,6 +221,7 @@ li::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 li+li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -303,8 +310,8 @@ li+li {
 
 @keyframes pop {
   0% {
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 
   100% {
