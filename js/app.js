@@ -1,6 +1,47 @@
 let toss_val;
 let player;
+window.onload = function () {
+  initApp();
+};
+function initApp() {
+  // Listening for auth state changes.
+  // [START authstatelistener]
+  firebase.auth().onAuthStateChanged(function (user) {
+    // [START_EXCLUDE silent]
+    // [END_EXCLUDE]
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      // [START_EXCLUDE]
+      console.log(displayName);
+    }
+  });
+}
 
+function register() {
+  let userId = document.getElementById("userId").value;
+  let userPass = document.getElementById("userPass").value;
+  if (login(userId, userPass))
+    console.log("Successful login");
+
+}
+
+function login(email, password) {
+  return firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    signUp(email, password);
+  });
+}
+
+function signUp(email, password) {
+  return firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+  });
+}
 
 jQuery(document).ready(function ($) {
   $("#coin").on("click", function () {
@@ -65,10 +106,10 @@ function loadGame() {
 
 function selectToss() {
   if (document.getElementById("bat").checked) {
-    player=2;
+    player = 2;
   }
   else
-    player=1;
+    player = 1;
   document.getElementById("startGame").style.opacity = 1;
   document.getElementById("startGame").style.pointerEvents = "auto";
 }

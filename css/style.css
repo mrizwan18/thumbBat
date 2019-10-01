@@ -148,6 +148,11 @@ body {
   pointer-events: none;
 }
 
+.btn-modal.login {
+  background: #5cb85c;
+  pointer-events: auto;
+}
+
 .btn-innings {
   font-size: 14px;
   font-weight: bolder;
@@ -226,7 +231,28 @@ li+li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.loginForm {
+  width: 320px;
+  height: 120px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+}
 
+.loginForm input {
+  padding: 15px;
+  border-radius: 14px;
+  line-height: 1.2rem;
+  background: #d3d3d3;
+  color: #444444;
+  margin: auto;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 13pt;
+  outline: none;
+  border: 1.5px solid #444444;
+}
 
 
 

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
   <link rel="stylesheet" href="./css/style.css">
   <title>ThumbBat</title>
 </head>
@@ -146,18 +146,63 @@
         <img src="./assets/mainBack.png" class="img-fluid img-responsive" />
         <br>
         <button class="btn btn-play" type="submit" onclick="loadGame()">Play as a Guest</button>
-        <button class="btn btn-play" type="submit" onclick="loadGame()">Login</button>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginTitle"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable " role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="loginTitle">Sign in / Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="loginForm">
+                  <div>
+                    <input type="email" name="email" id="userId" placeholder="abc@thumbbat.com" required>
+                  </div>
+                  <div>
+                    <input type="password" name="pass" id="userPass" placeholder="Password" required>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-modal login" onclick="register()">Sign in / Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-play" type="submit" data-toggle="modal" data-target="#loginModal">Login</button>
       </div>
     </div>
   </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
 
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
 
-
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDxx3EWAaDxZ8_JQ94KqecAJ1cACFrASnM",
+      authDomain: "thumbbat-d3acd.firebaseapp.com",
+      databaseURL: "https://thumbbat-d3acd.firebaseio.com",
+      projectId: "thumbbat-d3acd",
+      storageBucket: "",
+      messagingSenderId: "885484659008",
+      appId: "1:885484659008:web:bb92bad7c52729304a1aa5",
+      measurementId: "G-L97BXR3C7E"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
