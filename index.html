@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="stylesheet" href="./css/login.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>ThumbBat</title>
 </head>
@@ -151,25 +152,64 @@
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable " role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="loginTitle">Sign in / Sign Up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="loginForm">
-                  <div>
-                    <input type="email" name="email" id="userId" placeholder="abc@thumbbat.com" required>
-                  </div>
-                  <div>
-                    <input type="password" name="pass" id="userPass" placeholder="Password" required>
-                  </div>
+              <div id="signInDiv">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginTitle">Sign in</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="leftCol">
+                      <div class="question">
+                        <input type="text" id="userId" required />
+                        <label>Email Address</label>
+                      </div>
+                      <div class="question">
+                        <input type="password" id="userPass" required />
+                        <label>Password</label>
+                      </div>
+                      <div class="alert alert-danger error" id="loginError" role="alert">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-modal login" onclick="login(event)">Sign in</button>
+                  <button type="button" class="btn btn-modal signUp" id="toggleSignUp">Sign Up</button>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-modal login" onclick="register()">Sign in / Sign Up</button>
+
+              <div id="signUpDiv">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginTitle">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="leftCol">
+                      <div class="question">
+                        <input type="text" id="userIdUP" required />
+                        <label>Email Address</label>
+                      </div>
+                      <div class="question">
+                        <input type="password" id="userPassUP" required />
+                        <label>Password</label>
+                      </div>
+                      <div class="alert alert-danger error" id="loginErrorUP" role="alert">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-modal login" id="toggleSignIn">Sign in</button>
+                  <button type="button" class="btn btn-modal signUp" onclick="signUp(event)">Sign Up</button>
+                </div>
               </div>
+
             </div>
           </div>
         </div>

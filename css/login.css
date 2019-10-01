@@ -1,0 +1,108 @@
+/*######### FANCY INPUT */
+
+.transition,
+form button,
+form .question label,
+form .question input[type="text"],
+form .question input[type="password"] {
+    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+}
+
+
+form .question {
+    position: relative;
+    padding: 10px 0;
+}
+
+form .question:first-of-type {
+    padding-top: 0;
+}
+
+form .question:last-of-type {
+    padding-bottom: 0;
+}
+
+form .question label {
+    transform-origin: left center;
+    color: #d9534f;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+form .question input[type="text"],
+form .question input[type="password"] {
+    appearance: none;
+    background-color: none;
+    border: 1px solid #d9534f;
+    line-height: 0;
+    font-size: 17px;
+    width: 220px;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #d9534f;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+form .question input[type="text"]:focus,
+form .question input[type="password"]:focus {
+    outline: none;
+    background: #d9534f;
+    color: white;
+    margin-top: 30px;
+}
+
+form .question input[type="text"]:valid,
+form .question input[type="password"]:valid {
+    margin-top: 30px;
+}
+
+form .question input[type="text"]:focus~label,
+form .question input[type="password"]:focus~label {
+    -moz-transform: translate(0, -40px);
+    -ms-transform: translate(0, -40px);
+    -webkit-transform: translate(0, -40px);
+    transform: translate(0, -40px);
+    color: #d9534f;
+}
+
+form .question input[type="text"]:valid~label,
+form .question input[type="password"]:valid~label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+
+.error {
+    margin-left: 5% 20%;
+    display: none;
+}
+
+.leftCol {
+    text-align: center;
+    margin: 10% 25% 0%;
+}
+
+#signUpDiv {
+    display: none;
+}
+
+/*########## FANCY INPUT ENDS ############*/

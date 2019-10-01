@@ -1,45 +1,87 @@
 let toss_val;
 let player;
-window.onload = function () {
-  initApp();
-};
-function initApp() {
-  // Listening for auth state changes.
-  // [START authstatelistener]
-  firebase.auth().onAuthStateChanged(function (user) {
-    // [START_EXCLUDE silent]
-    // [END_EXCLUDE]
-    if (user) {
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      // [START_EXCLUDE]
-      console.log(displayName);
-    }
+
+function setError(upValue = "") {
+  document.getElementById("loginError" + upValue).innerHTML = "Email or Password Invalid. Type email as abc@abc.com"
+  document.getElementById("loginError" + upValue).style.display = "block";
+  document.getElementById("userPass" + upValue).addEventListener("focus", () => {
+    document.getElementById("loginError" + upValue).style.display = "none";
+  });
+  document.getElementById("userId" + upValue).addEventListener("focus", () => {
+    document.getElementById("loginError" + upValue).style.display = "none";
   });
 }
 
-function register() {
+function verifyLog(event, input1, input2) {
+  if (
+    (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input1))
+    == -1 ||
+    input1 === "" ||
+    input2 === ""
+  ) {
+    setError();
+    event.preventDefault();
+    return false;
+  }
+  return true;
+}
+
+function verifySign(event, input1, input2, input3) {
+  if (
+    (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input1))
+    == -1 ||
+    input1 === "" ||
+    input2 === ""
+  ) {
+    setError("UP");
+
+    event.preventDefault();
+    return false;
+  }
+  return true;
+}
+
+document.getElementById("toggleSignUp").addEventListener("click", () => {
+  document.getElementById("signUpDiv").style.display = "block";
+  document.getElementById("signInDiv").style.display = "none";
+});
+document.getElementById("toggleSignIn").addEventListener("click", () => {
+  document.getElementById("signUpDiv").style.display = "none";
+  document.getElementById("signInDiv").style.display = "block";
+});
+
+
+function login(event) {
   let userId = document.getElementById("userId").value;
   let userPass = document.getElementById("userPass").value;
-  if (login(userId, userPass))
-    console.log("Successful login");
-
-}
-
-function login(email, password) {
-  return firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-    signUp(email, password);
+  if (!verifyLog(event, userId, userPass))
+    return false;
+  return firebase.auth().signInWithEmailAndPassword(userId, userPass).catch(function (error) {
+    document.getElementById("loginError").innerHTML = error.message;
+    document.getElementById("loginError").style.display = "block";
+    document.getElementById("userPass").addEventListener("focus", () => {
+      document.getElementById("loginError").style.display = "none";
+    });
+    document.getElementById("userId").addEventListener("focus", () => {
+      document.getElementById("loginError").style.display = "none";
+    });
   });
 }
 
-function signUp(email, password) {
-  return firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+function signUp(event) {
+  let userId = document.getElementById("userIdUP").value;
+  let userPass = document.getElementById("userPassUP").value;
+  if (!verifySign(event, userId, userPass))
+    return false;
+  return firebase.auth().createUserWithEmailAndPassword(userId, userPass).catch(function (error) {
+    document.getElementById("loginErrorUP").innerHTML = error.message;
+    document.getElementById("loginErrorUP").style.display = "block";
+    document.getElementById("userPassUP").addEventListener("focus", () => {
+      document.getElementById("loginErrorUP").style.display = "none";
+    });
+    document.getElementById("userIdUP").addEventListener("focus", () => {
+      document.getElementById("loginErrorUP").style.display = "none";
+    });
   });
 }
 
