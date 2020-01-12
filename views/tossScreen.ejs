@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include head %>
+</head>
+
+<body>
+    <% include header %>
+    <div class="mainBack">
+        <!-- Modal -->
+        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="selectionModalTitle">INSTRUCTIONS</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="result"></h2>
+                        <div class="selectInnings">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-innings">
+                                    <input type="radio" name="options" id="bat" autocomplete="off"
+                                        onchange="selectToss()">
+                                    Bat
+                                </label>
+                                <label class="btn btn-innings">
+                                    <input type="radio" name="options" id="bowl" autocomplete="off"
+                                        onchange="selectToss()">
+                                    Bowl
+                                </label>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>It's just like good ol' days </li>
+                            <li>Hit a key on keyboard from 1-6 to bowl/bat</li>
+                            <li>If you and computer land the same number, innings is over </li>
+                            <li>Just hit the Start and you will understand the rest </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-modal cancel" data-dismiss="modal">Cancel</button>
+                        <form action="game" method="GET">
+                            <button type="submit" class="btn btn-modal start" id="startGame">Start</button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="welcome">Choose <span class="gold">Paanch</span> or <span class="gold">Chaand </span>and
+            click the
+            Coin for Toss</h2>
+        <div class="users">
+            <div class="player">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-choice">
+                        <input type="radio" name="options" id="paanch" autocomplete="off" onchange="enableToss()">
+                        Paanch
+                    </label>
+                    <label class="btn btn-choice">
+                        <input type="radio" name="options" id="chaand" autocomplete="off" onchange="enableToss()">
+                        Chaand
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="coin">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/app.js"></script>
+
+</body>
+
+</html>

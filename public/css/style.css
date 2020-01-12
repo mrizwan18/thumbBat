@@ -26,6 +26,7 @@ body {
   font-size: 40px;
   font-weight: bolder;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .mainBack {
@@ -55,9 +56,6 @@ body {
   animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) both;
 }
 
-.toss {
-  display: none;
-}
 
 
 .users {
@@ -69,6 +67,11 @@ body {
 
 .gold {
   color: rgb(248, 217, 95);
+  transition: all .26s;
+}
+
+.gold:hover {
+  transform: translateY(-7px);
 }
 
 .social {
@@ -288,10 +291,10 @@ li+li {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   fill-opacity: 0;
-  animation: draw 2.5s ease-in forwards;
-  -webkit-animation: draw 2.5s ease-in forwards;
-  -moz-animation: draw 2.5s ease-in forwards;
-  -o-animation: draw 2.5s ease-in forwards;
+  animation: draw 3.5s ease-in forwards;
+  -webkit-animation: draw 3.5s ease-in forwards;
+  -moz-animation: draw 3.5s ease-in forwards;
+  -o-animation: draw 3.5s ease-in forwards;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
 }
@@ -449,4 +452,63 @@ li+li {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+
+
+/*/////////////////////*/
+
+.crease {
+  height: 250px;
+  width: 100%;
+}
+
+.standing {
+  margin-top: 10px;
+  width: 250px;
+  height: 80%;
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+
+}
+
+.scoreboard {
+  margin-top:40px;
+  margin-left: -105px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 4px;
+  text-align: center;
+  width: 200px;
+  color: white;
+  font-size: 46px;
+  padding: 15px 20px;
+  position: absolute;
+}
+
+.badge {
+  background: #d9534f;
+  color: white;
+  font-size: 16px;
+  padding: 2px 10px;
+}
+
+#userLabel {
+  position: absolute;
+  top: 45%;
+  left: -30px;
+}
+
+#computerLabel {
+  position: absolute;
+  top: 45%;
+  right: -60px;
+}
+
+#userDiv {
+  margin-right: 330px;
+}
+
+#computerDiv {
+  margin-left: 330px;
 }

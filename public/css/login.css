@@ -105,4 +105,20 @@ form .question input[type="password"]:valid~label {
     display: none;
 }
 
+#successUP,
+#successLog {
+    display: none;
+}
+
+.resetPass {
+    margin-right: -70px;
+    pointer-events: pointer !important;
+    color: #d9534f !important;
+}
+
+.resetPass:hover {
+    pointer-events: auto;
+    color: #1a1a1a !important;
+}
+
 /*########## FANCY INPUT ENDS ############*/
