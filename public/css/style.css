@@ -463,17 +463,17 @@ li+li {
 }
 
 .standing {
-  margin-top: 10px;
   width: 250px;
   height: 80%;
   color: #fff;
   display: inline-block;
   font-size: 20px;
+  vertical-align: top;
 
 }
 
 .scoreboard {
-  margin-top:40px;
+  margin-top: 40px;
   margin-left: -105px;
   display: inline-block;
   border: 3px solid white;
@@ -511,4 +511,38 @@ li+li {
 
 #computerDiv {
   margin-left: 330px;
+}
+
+.start {
+  margin-top: 50px;
+}
+
+@keyframes gbounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-50px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#userBaari {
+  animation: gbounce 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 3;
+}
+
+#computerBaari {
+  animation: gbounce 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 3;
 }
