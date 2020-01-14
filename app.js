@@ -20,6 +20,9 @@ app.get('/toss', (req, res, next) => {
 app.get('/game', (req, res, next) => {
     res.render("game");
 });
+app.get('/about', (req, res, next) => {
+    res.render("about");
+});
 
 app.use((req, res, next) => {
     const err = new Error('Not Found');

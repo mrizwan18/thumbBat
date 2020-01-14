@@ -75,32 +75,6 @@ body {
   transform: translateY(-7px);
 }
 
-.social {
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  position: relative;
-}
-
-.social.fb {
-  border: 2.5px solid rgb(52, 55, 214);
-}
-
-.count {
-  color: white;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  font-size: 10px;
-}
-
-.count.fb {
-  background-color: rgb(52, 55, 214);
-  background-size: cover;
-}
 
 .btn-choice {
   margin-top: 30px;
@@ -157,15 +131,6 @@ body {
   pointer-events: all;
 }
 
-.btn-modal.login {
-  background: #d9534f;
-  pointer-events: auto;
-}
-
-.btn-modal.signUp {
-  background: #1a1a1a;
-  pointer-events: auto;
-}
 
 .btn-innings {
   font-size: 14px;
@@ -192,11 +157,6 @@ body {
 
 .player {
   margin: auto;
-}
-
-
-.marg-btn {
-  align-content: center;
 }
 
 .selectInnings {
@@ -243,42 +203,6 @@ li::before {
 
 li+li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@keyframes move-left {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(-400px);
-    transform: translateX(-400px);
-  }
-}
-
-
-@keyframes move-right {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(400px);
-    transform: translateX(400px);
-  }
 }
 
 .intro {
@@ -566,4 +490,199 @@ li+li {
   padding: 20px;
   margin-left: 5px;
   color: #1a1a1a;
+}
+
+.picDiv {
+  margin-left: 100px;
+  margin-top: 100px;
+  position: absolute;
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+}
+
+.picDiv img {
+  height: 100%;
+  width: 50%;
+  transition: transform 0.3s ease-out;
+}
+
+.razi-left {
+  transform: translate(0%, -20%)
+}
+
+.razi-right {
+  transform: translate(0%, 20%)
+}
+
+.picDiv:hover .razi-left {
+  transform: translate(0%, 0%)
+}
+
+.picDiv:hover .razi-right {
+  transform: translate(0%, 0%)
+}
+
+.detailsDiv {
+  height: 500px;
+  width: 400px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  right: 15%;
+  text-align: left;
+}
+
+.hi {
+  font-size: 80px;
+  font-weight: bolder;
+}
+
+.caption {
+  position: relative;
+  transform: translateY(-50%);
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, .25);
+}
+
+.text-box {
+  margin-top: 70px;
+  margin-left: 150px;
+  position: relative;
+}
+
+.text-box div {
+  position: absolute;
+  transform: rotateX(-90deg);
+  opacity: 0;
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, .25);
+  animation-timing-function: ease;
+}
+
+.text-box div:nth-child(1) {
+  animation: rollDown 10s forwards infinite;
+}
+
+.text-box div:nth-child(2) {
+  animation: rollDown2 10s forwards infinite;
+}
+
+.text-box div:nth-child(3) {
+  animation: rollDown3 10s forwards infinite;
+}
+
+@keyframes rollDown {
+  0% {
+    top: -200px;
+    transform: rotateX(-90deg);
+  }
+
+  11% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  22% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  33% {
+    top: 50px;
+    transform: rotateX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rollDown2 {
+  33% {
+    top: -200px;
+    transform: rotateX(-90deg);
+  }
+
+  44% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  55% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  66% {
+    top: 50px;
+    transform: rotateX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rollDown3 {
+  66% {
+    top: -200px;
+    transform: rotateX(-90deg);
+  }
+
+  77% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  88% {
+    top: -74px;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  99% {
+    top: 50px;
+    transform: rotateX(30deg);
+    opacity: 0;
+  }
+}
+
+.socials {
+  width: 500px;
+  position: absolute;
+  margin-top: 260px;
+  right: 7.5%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+  display: inline-block;
+}
+
+.btn-social {
+  width: 80px;
+  height: 60px;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+  border: 2px solid #fefefe;
+  box-shadow: none !important;
+  padding: 10px 15px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.btn-social:hover {
+  background: #fefefe;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.btn-social:not(:disabled):not(.disabled):active,
+.btn-social:not(:disabled):not(.disabled).active,
+.show>.btn-social.dropdown-toggle {
+  color: #1a1a1a;
+  background-color: #bababa;
+  border-color: #fefefe;
 }
