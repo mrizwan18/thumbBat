@@ -66,3 +66,9 @@ function selectToss() {
   document.getElementById("startGame").style.opacity = 1;
   document.getElementById("startGame").style.pointerEvents = "auto";
 }
+
+function hideMe() {
+  setTimeout(() => {
+    document.getElementById("hide-me").style.opacity = "0";
+  }, 800);
+}

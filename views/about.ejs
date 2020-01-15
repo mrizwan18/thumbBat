@@ -10,9 +10,10 @@
     <div class="grid-container">
         <% include header %>
         <main>
+            <div class="click-me" id="hide-me">Tap on the image</div>
             <div class="picDiv">
-                <img class="razi-left" src="static/assets/razi-left.jpg" alt="about me">
-                <img class="razi-right" src="static/assets/razi-right.jpg" alt="about me">
+                <img class="razi-left" src="static/assets/razi-left.jpg" alt="about me" onclick="hideMe()">
+                <img class="razi-right" src="static/assets/razi-right.jpg" alt="about me" onclick="hideMe()">
             </div>
         </main>
         <div class="detailsDiv">
@@ -51,7 +52,7 @@
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="static/js/bootstrap.min.js"></script>
-
+    <script src="static/js/app.js"></script>
 </body>
 
 </html>
