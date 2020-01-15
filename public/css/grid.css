@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-areas:
+        "header header"
+        "main   main"
+        "footer    footer";
+    height: 100vh;
+    margin: 2em;
+}
+
+main {
+    grid-area: main;
+    background: #1a1a1a;
+}
+
+
+section.footer {
+    grid-area: footer;
+    background: #1a1a1a;
+}
+
+header {
+    grid-area: header;
+}

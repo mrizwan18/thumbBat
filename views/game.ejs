@@ -6,102 +6,104 @@
 </head>
 
 <body>
-    <% include header %>
-    <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instrunctionsModalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="instructionsModalTitle">INSTRUCTIONS</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li>It's just like good ol' days </li>
-                        <li>Hit a number on screen from 1-6 to bowl/bat</li>
-                        <li>If you and computer land the same number, innings is over </li>
-                        <li>Just hit the Start and you will understand the rest </li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-modal cancel" data-dismiss="modal">Cancel</button>
+    <div class="grid-container">
+        <% include header %>
+        <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog"
+            aria-labelledby="instrunctionsModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="instructionsModalTitle">INSTRUCTIONS</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>It's just like good ol' days </li>
+                            <li>Hit a number on screen from 1-6 to bowl/bat</li>
+                            <li>If you and computer land the same number, innings is over </li>
+                            <li>Just hit the Start and you will understand the rest </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-modal cancel" data-dismiss="modal">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="inningsOverModal" tabindex="-1" role="dialog" aria-labelledby="inningsOverModalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="inningsOverModalTitle">Innings Over</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="innings-body">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-modal greenBtn" data-dismiss="modal">Continue</button>
+        <div class="modal fade" id="inningsOverModal" tabindex="-1" role="dialog"
+            aria-labelledby="inningsOverModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inningsOverModalTitle">Innings Over</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="innings-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-modal greenBtn" data-dismiss="modal">Continue</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverModalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="gameOverModalTitle">Game Over</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="gameOver-body">
-                    <img src='static/assets/won.png'>
-                </div>
-                <div class="modal-footer">
-                    <form action="/" method="GET">
-                        <button type="submit" class="btn btn-modal cancel" id="startGame">Exit</button>
-                    </form>
-                    <form action="game" method="GET">
-                        <button type="submit" class="btn btn-modal greenBtn" id="startGame">Restart</button>
-                    </form>
+        <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameOverModalTitle">Game Over</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="gameOver-body">
+                        <img src='static/assets/won.png'>
+                    </div>
+                    <div class="modal-footer">
+                        <form action="/" method="GET">
+                            <button type="submit" class="btn btn-modal cancel" id="startGame">Exit</button>
+                        </form>
+                        <form action="game" method="GET">
+                            <button type="submit" class="btn btn-modal greenBtn" id="startGame">Restart</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="mainBack">
-        <h2 class="welcome">You are <span class="gold" id="inning"></span> </h2>
-        <button class="btn btn-choice" data-toggle="modal" data-target="#instructionsModal">How to Play</button>
-        <div class="crease">
-            <div class="standing" id="userDiv">
-                <div>You</div>
-                <img src="static/assets/start.png" alt="start" class="start" id="userBaari">
+        <main>
+            <h2 class="welcome">You are <span class="gold" id="inning"></span> </h2>
+            <button class="btn btn-choice" data-toggle="modal" data-target="#instructionsModal">How to Play</button>
+            <div class="crease">
+                <div class="standing" id="userDiv">
+                    <div>You</div>
+                    <img src="static/assets/start.png" alt="start" class="start" id="userBaari">
+                </div>
+                <div class="scoreboard">
+                    <div id="userLabel" class="badge">User</div>
+                    <div id="computerLabel" class="badge">Computer</div>
+                    <span id="userScore">0</span>:<span id="computerScore">0</span>
+                </div>
+                <div class="standing" id="computerDiv">
+                    <div>Computer</div>
+                    <img src="static/assets/start-r.png" alt="start" class="start" id="computerBaari">
+                </div>
             </div>
-            <div class="scoreboard">
-                <div id="userLabel" class="badge">User</div>
-                <div id="computerLabel" class="badge">Computer</div>
-                <span id="userScore">0</span>:<span id="computerScore">0</span>
+            <div class="moves" id="moves">
+                <div class="move btn-choice">1</div>
+                <div class="move btn-choice">2</div>
+                <div class="move btn-choice">3</div>
+                <div class="move btn-choice">4</div>
+                <div class="move btn-choice">5</div>
+                <div class="move btn-choice">6</div>
             </div>
-            <div class="standing" id="computerDiv">
-                <div>Computer</div>
-                <img src="static/assets/start-r.png" alt="start" class="start" id="computerBaari">
-            </div>
-        </div>
-        <div class="moves" id="moves">
-            <div class="move btn-choice">1</div>
-            <div class="move btn-choice">2</div>
-            <div class="move btn-choice">3</div>
-            <div class="move btn-choice">4</div>
-            <div class="move btn-choice">5</div>
-            <div class="move btn-choice">6</div>
-        </div>
+        </main>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
