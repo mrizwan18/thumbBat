@@ -1,4 +1,6 @@
 let toss_val;
+var socket = io();
+var username = "Joemama"
 jQuery(document).ready(function ($) {
   $("#coin").on("click", function () {
     if (document.getElementById("paanch").checked) {
@@ -71,4 +73,18 @@ function hideMe() {
   setTimeout(() => {
     document.getElementById("hide-me").style.opacity = "0";
   }, 800);
+}
+
+
+function addUser() {
+  if (document.getElementById("username").value !== '')
+    username = document.getElementById("username").value
+  socket.emit("user", {
+    username: username
+  })
+  $(document).ready(function () {
+    $("#usernameModal").modal('hide');
+  });
+  var currentPlayer = localStorage.setItem("username", username)
+
 }

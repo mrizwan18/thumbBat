@@ -1,4 +1,5 @@
 const express = require('express')
+var socket = require('socket.io')
 const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -8,8 +9,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-
-
 
 app.get('/', (req, res, next) => {
     res.render('index');

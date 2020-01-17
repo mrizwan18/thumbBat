@@ -1,6 +1,8 @@
 var userScore = 0, computerScore = 0, count = 0;
 var currentPlayer = localStorage.getItem("player")
+var userName = localStorage.getItem("username")
 window.onload = function () {
+    document.getElementById("username").innerHTML = this.userName
     if (currentPlayer == 2)
         document.getElementById("inning").innerHTML = "Batting";
     else
