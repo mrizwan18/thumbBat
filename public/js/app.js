@@ -1,6 +1,5 @@
 let toss_val;
-var socket = io();
-var username = "Joemama"
+let username = "Joemama"
 jQuery(document).ready(function ($) {
   $("#coin").on("click", function () {
     if (document.getElementById("paanch").checked) {
@@ -21,7 +20,7 @@ jQuery(document).ready(function ($) {
           }
           else {
             document.getElementsByClassName("selectInnings")[0].style.display = "none";
-            document.getElementById("result").innerHTML = "You Lost the toss<br> Computer is batting first";
+            document.getElementById("result").innerHTML = "You Lost the toss<br> Other Player is batting first";
             localStorage.setItem("player", 1);
             document.getElementById("startGame").style.opacity = 1;
             document.getElementById("startGame").style.pointerEvents = "auto";
@@ -79,12 +78,9 @@ function hideMe() {
 function addUser() {
   if (document.getElementById("username").value !== '')
     username = document.getElementById("username").value
-  socket.emit("user", {
-    username: username
-  })
   $(document).ready(function () {
     $("#usernameModal").modal('hide');
   });
-  var currentPlayer = localStorage.setItem("username", username)
-
+  localStorage.setItem("username", username)
 }
+

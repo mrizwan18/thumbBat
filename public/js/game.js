@@ -1,7 +1,14 @@
-var userScore = 0, computerScore = 0, count = 0;
+var userScore = 0, computerScore = 0, count = 0, playersOnline, battingList, bowlingList;
+var socket = io();
 var currentPlayer = localStorage.getItem("player")
 var userName = localStorage.getItem("username")
 window.onload = function () {
+    let user = {}
+    user.username = localStorage.getItem("username")
+    user.status = currentPlayer
+    socket.emit("user", {
+        user: user
+    })
     document.getElementById("username").innerHTML = this.userName
     if (currentPlayer == 2)
         document.getElementById("inning").innerHTML = "Batting";
@@ -14,6 +21,23 @@ window.onload = function () {
         })
     });
 
+}
+setInterval(() => {
+    socket.on('userList', (data) => {
+        playersOnline = data.userList
+        battingList = data.battingList
+        bowlingList = data.bowlingList
+        document.getElementById("totalOnline").innerHTML = data.userList.length
+    })
+}, 1000);
+function showPlayers() {
+    let playersDiv = document.getElementById('players-body')
+    playersDiv.innerHTML = ""
+    for (let i = 0; i < playersOnline.length; i++) {
+        let p = document.createElement("li")
+        p.innerHTML = playersOnline[i].username
+        playersDiv.appendChild(p)
+    }
 }
 
 function makeMove(digit) {
@@ -101,3 +125,4 @@ function inningsOver() {
     }
     $("#inningsOverModal").modal("show");
 }
+

@@ -544,11 +544,33 @@ main {
 
 
 .footer {
-  margin-top: 150px;
-  grid-area: footer;
-  background: #1a1a1a;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #282828;
   color: white;
+  padding: 15px;
+  height: auto;
+  vertical-align: baseline;
 }
+
+.footer30 {
+  width: 30%;
+  min-width: 180px;
+}
+
+.footer40 {
+  width: 40%;
+  max-width: 722px;
+}
+
+.toggler {
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+}
+
 
 .logo {
   grid-area: logo;
@@ -867,7 +889,7 @@ main {
     height: auto;
     width: auto;
     margin: auto;
-    margin-top: -50px;
+    margin-top: -140px;
   }
 
   .move {
