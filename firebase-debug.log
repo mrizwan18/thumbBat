@@ -1,0 +1,29 @@
+[debug] [2020-12-21T14:19:32.394Z] ----------------------------------------------------------------------
+[debug] [2020-12-21T14:19:32.396Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mrizwan02\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login --reauth
+[debug] [2020-12-21T14:19:32.397Z] CLI Version:   9.0.1
+[debug] [2020-12-21T14:19:32.397Z] Platform:      win32
+[debug] [2020-12-21T14:19:32.397Z] Node Version:  v12.7.0
+[debug] [2020-12-21T14:19:32.398Z] Time:          Mon Dec 21 2020 19:19:32 GMT+0500 (Pakistan Standard Time)
+[debug] [2020-12-21T14:19:32.398Z] ----------------------------------------------------------------------
+[debug] [2020-12-21T14:19:32.398Z] 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=764119868&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-12-21T14:19:41.989Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g7Xroccsdf3HBUDEeu7Rv2DLbwDrCHW3BZZ0MHvsud-6MHKpvy7LNw76Serx1j9xQ","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2020-12-21T14:19:42.046Z] Token Fetch Error: FirebaseError: Server Error. read ECONNRESET
+    at Request._callback (C:\Users\mrizwan02\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\mrizwan02\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:203:13)
+    at Request.EventEmitter.emit (domain.js:471:20)
+    at Request.onRequestError (C:\Users\mrizwan02\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:203:13)
+    at ClientRequest.EventEmitter.emit (domain.js:471:20)
+    at TLSSocket.socketErrorListener (_http_client.js:399:9)
+    at TLSSocket.emit (events.js:203:13)
+    at TLSSocket.EventEmitter.emit (domain.js:471:20)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
