@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 * {
   padding: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #1a1a1a;
   height: 100vh;
 }
@@ -15,7 +14,6 @@ body {
 .load {
   display: block;
 }
-
 
 .img-responsive {
   box-sizing: border-box;
@@ -48,14 +46,15 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   border: 2px solid #fefefe;
-
+  text-decoration: none;
 }
 
 .btn-play:hover {
   background: #fefefe;
   color: #1a1a1a;
-  -webkit-animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) both;
-  animation: pop 0.5s cubic-bezier(0.370, 0.000, 0.745, 0.715) both;
+  -webkit-animation: pop 0.5s cubic-bezier(0.37, 0, 0.745, 0.715) both;
+  animation: pop 0.5s cubic-bezier(0.37, 0, 0.745, 0.715) both;
+  text-decoration: none;
 }
 
 .users {
@@ -67,7 +66,7 @@ body {
 
 .gold {
   color: rgb(248, 217, 95);
-  transition: all .26s;
+  transition: all 0.26s;
 }
 
 .btn-choice {
@@ -89,7 +88,7 @@ body {
 
 .btn-choice:not(:disabled):not(.disabled):active,
 .btn-choice:not(:disabled):not(.disabled).active,
-.show>.btn-choice.dropdown-toggle {
+.show > .btn-choice.dropdown-toggle {
   color: #1a1a1a;
   background-color: #bababa;
   border-color: #fefefe;
@@ -113,7 +112,6 @@ body {
   background: #d9534f;
 }
 
-
 .btn-modal.start {
   background: #5cb85c;
   opacity: 0.5;
@@ -124,7 +122,6 @@ body {
   background: #5cb85c;
   pointer-events: all;
 }
-
 
 .btn-innings {
   font-size: 14px;
@@ -144,7 +141,7 @@ body {
 
 .btn-innings:not(:disabled):not(.disabled):active,
 .btn-innings:not(:disabled):not(.disabled).active,
-.show>.btn-innings.dropdown-toggle {
+.show > .btn-innings.dropdown-toggle {
   color: white;
   background-color: #464545;
 }
@@ -195,7 +192,7 @@ li::before {
   -webkit-text-fill-color: transparent;
 }
 
-li+li {
+li + li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -265,9 +262,12 @@ li+li {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0 0 45px rgba(255, 255, 255, .3), 0 12px 20px -10px rgba(0, 0, 0, .4);
-  -moz-box-shadow: inset 0 0 45px rgba(255, 255, 255, .3), 0 12px 20px -10px rgba(0, 0, 0, .4);
-  box-shadow: inset 0 0 45px rgba(255, 255, 255, .3), 0 12px 20px -10px rgba(105, 105, 105, 0.4);
+  -webkit-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(105, 105, 105, 0.4);
 }
 
 .side-a {
@@ -296,7 +296,6 @@ li+li {
 
 .side-b {
   -webkit-transform: rotateY(-180deg);
-
 }
 
 #coin.heads {
@@ -365,7 +364,6 @@ li+li {
   display: inline-block;
   font-size: 20px;
   vertical-align: top;
-
 }
 
 .scoreboard {
@@ -479,21 +477,20 @@ li+li {
 }
 
 .razi-left {
-  transform: translate(0%, -20%)
+  transform: translate(0%, -20%);
 }
 
 .razi-right {
-  transform: translate(0%, 20%)
+  transform: translate(0%, 20%);
 }
 
 .picDiv:hover .razi-left {
-  transform: translate(0%, 0%)
+  transform: translate(0%, 0%);
 }
 
 .picDiv:hover .razi-right {
-  transform: translate(0%, 0%)
+  transform: translate(0%, 0%);
 }
-
 
 .btn-social {
   width: 80px;
@@ -517,7 +514,7 @@ li+li {
 
 .btn-social:not(:disabled):not(.disabled):active,
 .btn-social:not(:disabled):not(.disabled).active,
-.show>.btn-social.dropdown-toggle {
+.show > .btn-social.dropdown-toggle {
   color: #1a1a1a;
   background-color: #bababa;
   border-color: #fefefe;
@@ -541,7 +538,6 @@ main {
   text-align: center;
   margin-top: 80px;
 }
-
 
 .footer {
   display: flex;
@@ -570,7 +566,6 @@ main {
   right: 20px;
   bottom: 15px;
 }
-
 
 .logo {
   grid-area: logo;
@@ -603,7 +598,7 @@ main {
 .caption {
   position: relative;
   transform: translateY(-50%);
-  text-shadow: 0px 5px 5px rgba(0, 0, 0, .25);
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 .text-box {
@@ -615,7 +610,7 @@ main {
   position: absolute;
   transform: rotateX(-90deg);
   opacity: 0;
-  text-shadow: 0px 5px 5px rgba(0, 0, 0, .25);
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
   animation-timing-function: ease;
 }
 
@@ -714,7 +709,6 @@ main {
   display: none;
 }
 
-
 /*Media Queries*/
 
 @media only screen and (max-width: 600px) {
@@ -735,7 +729,6 @@ main {
     font-size: 20px;
   }
 
-
   .footer {
     margin-top: 30px;
   }
@@ -745,7 +738,6 @@ main {
     width: 207pt;
     margin-left: -80px;
   }
-
 
   .navigation {
     display: flex;
@@ -786,8 +778,8 @@ main {
   }
 
   .lead {
-    font-size: 0.70rem;
-    font-weight: 270
+    font-size: 0.7rem;
+    font-weight: 270;
   }
 
   .socials {
@@ -905,9 +897,6 @@ main {
   }
 }
 
-
-
-
 .gooey {
   display: none;
   position: absolute;
@@ -1003,4 +992,14 @@ main {
   width: 110px;
   height: 100px;
   margin: auto;
+}
+
+.centerDiv {
+  background-image: url("../assets/star-bg.jfif");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
