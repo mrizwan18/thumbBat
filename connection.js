@@ -24,9 +24,8 @@ exports.addUser = function addUser(username) {
         return true
       })
       .catch(err => {
-        console.log(err)
         return false
       });
-  }
-  return false;
+  } else
+    return false;
 }
