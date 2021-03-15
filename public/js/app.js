@@ -1,15 +1,12 @@
 let toss_val;
 let username = "Joemama";
 
-var database = firebase.database();
-
 jQuery(document).ready(function ($) {
   $("#coin").on("click", function () {
     if (document.getElementById("paanch").checked) {
       toss_val = "Paanch";
     } else toss_val = "Chaand";
     var flipResult = Math.random(0, 1);
-    console.log(flipResult);
     $("#coin").removeClass();
     setTimeout(function () {
       if (flipResult <= 0.5) {
@@ -71,19 +68,17 @@ function selectToss() {
   document.getElementById("startGame").style.pointerEvents = "auto";
 }
 
-function hideMe() {
-  setTimeout(() => {
-    document.getElementById("hide-me").style.opacity = "0";
-  }, 800);
-}
-
-function addUser() {
+$("#userBtn").click(function () {
   if (document.getElementById("username").value !== "")
     username = document.getElementById("username").value;
-  if (!isUserExists) {
-    $(document).ready(function () {
-      $("#usernameModal").modal("hide");
-    });
+  if (username) {
+    $("#usernameModal").modal("hide");
+    $.post("/addUser", {
+        user: username
+      },
+      function (data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+      });
     localStorage.setItem("username", username);
   } else {
     $("#dbMessage").html(
@@ -91,17 +86,4 @@ function addUser() {
     );
     $("#messageALert").addClass("show");
   }
-}
-
-function isUserExists(uid) {
-  database()
-    .ref("/users/" + uid)
-    .once("value")
-    .then((snapshot) => {
-      let username = (snapshot.val() && snapshot.val().username) || null;
-      if (username != null) {
-        return true;
-      }
-      return false;
-    });
-}
+});
