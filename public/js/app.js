@@ -72,13 +72,18 @@ $("#userBtn").click(function () {
   if (document.getElementById("username").value !== "")
     username = document.getElementById("username").value;
   if (username) {
-    $("#usernameModal").modal("hide");
     $.post("/addUser", {
         user: username
       },
       function (data, status) {
+        console.log(data, status)
         $("#dbMessage").html(data);
         $("#messageALert").addClass("show");
+        if (status == "200")
+          setTimeout(function () {
+            $("#usernameModal").modal("hide");
+          }, 2000);
+
       });
     localStorage.setItem("username", username);
   } else {
