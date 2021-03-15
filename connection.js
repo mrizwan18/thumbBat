@@ -5,8 +5,6 @@ function isUserPresent(username) {
       username: username
     })
     .then(users => {
-      console.log(users)
-      console.log(users !== null)
       return users !== null;
     })
     .catch(err => {
@@ -18,13 +16,11 @@ function isUserPresent(username) {
 
 exports.addUser = function addUser(username) {
   if (!isUserPresent(username)) {
-    console.log("inside creation")
     const newUser = new User({
       username
     });
     newUser.save()
       .then(() => {
-        console.log("User Created")
         return true
       })
       .catch(err => {
