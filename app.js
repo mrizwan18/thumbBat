@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const mongoose = require('mongoose');
 const db = require("./connection")
 const uri =
-  "mongodb+srv://razi:7751930710b@thumbbat.gnmkw.mongodb.net/thumbBat?retryWrites=true&w=majority";
+  "mongodb+srv://razi:7751930710bM@thumbbat.gnmkw.mongodb.net/thumbBat?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
