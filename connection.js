@@ -21,7 +21,7 @@ exports.addUser = async function addUser(username) {
     });
     newUser.save()
       .then(() => {
-        console.log("Usre Created")
+        console.log("User Created")
         return true
       })
       .catch(err => {

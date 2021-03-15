@@ -77,7 +77,8 @@ $("#userBtn").click(function () {
         user: username
       },
       function (data, status) {
-        alert("Data: " + data + "\nStatus: " + status);
+        $("#dbMessage").html(data);
+        $("#messageALert").addClass("show");
       });
     localStorage.setItem("username", username);
   } else {
