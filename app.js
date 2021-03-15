@@ -42,7 +42,7 @@ app.post("/addUser", (req, res, next) => {
   if (db.addUser(req.body.user))
     res.status(200).json("User Created")
   else
-    res.status(409).json('User exists')
+    res.status(200).json('User exists')
 });
 
 app.use((req, res, next) => {
