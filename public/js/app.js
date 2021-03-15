@@ -71,25 +71,22 @@ function selectToss() {
 $("#userBtn").click(function () {
   if (document.getElementById("username").value !== "")
     username = document.getElementById("username").value;
-  if (username) {
-    $.post("/addUser", {
-        user: username
-      },
-      function (data, status) {
-        console.log(data, status)
-        $("#dbMessage").html(data);
+  $.post("/addUser", {
+      user: username
+    },
+    function (data, status) {
+      console.log(data, status)
+      if (status == "200") {
+        $("#dbMessage").html("User successfully created.");
         $("#messageALert").addClass("show");
-        if (status == "200")
-          setTimeout(function () {
-            $("#usernameModal").modal("hide");
-          }, 2000);
+        setTimeout(function () {
+          $("#usernameModal").modal("hide");
+        }, 2000);
+        localStorage.setItem("username", username);
+      } else {
+        $("#dbMessage").html("Username " + username + " already exists, try another");
+        $("#messageALert").addClass("show");
+      }
+    });
 
-      });
-    localStorage.setItem("username", username);
-  } else {
-    $("#dbMessage").html(
-      "Username " + username + " already exists, try another"
-    );
-    $("#messageALert").addClass("show");
-  }
 });

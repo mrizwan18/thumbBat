@@ -5,6 +5,8 @@ function isUserPresent(username) {
       username: username
     })
     .then(users => {
+      console.log(users)
+      console.log(users !== null)
       return users !== null;
     })
     .catch(err => {
