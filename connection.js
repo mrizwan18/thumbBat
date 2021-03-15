@@ -18,6 +18,7 @@ async function isUserPresent(username) {
 
 exports.addUser = async function addUser(username) {
   if (!isUserPresent(username)) {
+    console.log("inside creation")
     const newUser = new User({
       username
     });
