@@ -1,12 +1,10 @@
 let User = require('./models/User.model');
 
-async function isUserPresent(username) {
+function isUserPresent(username) {
   User.findOne({
       username: username
     })
     .then(users => {
-      console.log(users)
-      console.log(users !== null)
       return users !== null;
     })
     .catch(err => {
@@ -16,7 +14,7 @@ async function isUserPresent(username) {
 }
 
 
-exports.addUser = async function addUser(username) {
+exports.addUser = function addUser(username) {
   if (!isUserPresent(username)) {
     console.log("inside creation")
     const newUser = new User({
