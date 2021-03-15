@@ -75,6 +75,7 @@ $("#userBtn").click(function () {
       user: username
     },
     function (data, status) {
+      console.log(data, status)
       if (data == "200") {
         $("#dbMessage").html("User successfully created.");
         $("#messageALert").addClass("show");
