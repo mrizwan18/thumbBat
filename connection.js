@@ -5,7 +5,7 @@ async function isUserPresent(username) {
       username: username
     })
     .then(users => {
-      return users === undefined || users === null;
+      return users !== undefined || users !== null;
     })
     .catch(err => {
       console.log(err)
