@@ -15,8 +15,7 @@ function isUserPresent(username, res) {
 
 exports.addUser = function addUser(username, res) {
   isUserPresent(username, function (result) {
-    console.log(result)
-    if (result) {
+    if (!result) {
       const newUser = new User({
         username
       });
