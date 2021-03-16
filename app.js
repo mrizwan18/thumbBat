@@ -39,10 +39,12 @@ app.get("/about", (req, res, next) => {
   res.render("about");
 });
 app.post("/addUser", (req, res, next) => {
-  if (db.addUser(req.body.user))
-    res.status(200).json("200")
-  else
-    res.status(200).json('409')
+  db.addUser(req.body.user, function (result) {
+    if (result) {
+      res.status(200).json("200")
+    } else
+      res.status(200).json('409')
+  })
 });
 
 app.use((req, res, next) => {

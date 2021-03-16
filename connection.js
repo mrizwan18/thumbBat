@@ -1,31 +1,32 @@
 let User = require('./models/User.model');
 
-function isUserPresent(username) {
+function isUserPresent(username, res) {
   User.findOne({
       username: username
     })
     .then(users => {
-      return users !== null;
+      return res(users !== null);
     })
     .catch(err => {
-      console.log(err)
-      return false
+      return res(false);
     });
 }
 
 
-exports.addUser = function addUser(username) {
-  if (!isUserPresent(username)) {
-    const newUser = new User({
-      username
-    });
-    newUser.save()
-      .then(() => {
-        return true
-      })
-      .catch(err => {
-        return false
+exports.addUser = function addUser(username, res) {
+  isUserPresent(username, function (result) {
+    if (result) {
+      const newUser = new User({
+        username
       });
-  } else
-    return false;
+      newUser.save()
+        .then(() => {
+          return res(true)
+        })
+        .catch(err => {
+          return res(false)
+        });
+    } else
+      return res(false)
+  })
 }
