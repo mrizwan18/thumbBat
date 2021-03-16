@@ -1,189 +1,133 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include head %>
-  </head>
 
-  <body>
-    <div class="grid-container">
-      <% include header %>
-      <main>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="selectionModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="selectionModalTitle"
-          aria-hidden="true"
-          data-controls-modal="selectionModalTitle"
-          data-backdrop="static"
-          data-keyboard="false"
-        >
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="selectionModalTitle">
-                  INSTRUCTIONS
-                </h5>
-              </div>
-              <div class="modal-body">
-                <h2 id="result"></h2>
-                <div class="selectInnings">
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-innings">
-                      <input
-                        type="radio"
-                        name="options"
-                        id="bat"
-                        autocomplete="off"
-                        onchange="selectToss()"
-                      />
-                      Bat
-                    </label>
-                    <label class="btn btn-innings">
-                      <input
-                        type="radio"
-                        name="options"
-                        id="bowl"
-                        autocomplete="off"
-                        onchange="selectToss()"
-                      />
-                      Bowl
-                    </label>
-                  </div>
+<head>
+  <% include head %>
+</head>
+
+<body>
+  <div class="grid-container">
+    <% include header %>
+    <main>
+      <!-- Modal -->
+      <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalTitle"
+        aria-hidden="true" data-controls-modal="selectionModalTitle" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="selectionModalTitle">
+                INSTRUCTIONS
+              </h5>
+            </div>
+            <div class="modal-body">
+              <h2 id="result"></h2>
+              <div class="selectInnings">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-innings">
+                    <input type="radio" name="options" id="bat" autocomplete="off" onchange="selectToss()" />
+                    Bat
+                  </label>
+                  <label class="btn btn-innings">
+                    <input type="radio" name="options" id="bowl" autocomplete="off" onchange="selectToss()" />
+                    Bowl
+                  </label>
                 </div>
-                <ul>
-                  <li>It's just like good ol' days</li>
-                  <li>Hit a number on screen from 1-6 to bowl/bat</li>
-                  <li>
-                    If you and computer land the same number, innings is over
-                  </li>
-                  <li>Just hit the Start and you will understand the rest</li>
-                </ul>
               </div>
-              <div class="modal-footer">
-                <form action="game" method="GET">
-                  <button
-                    type="submit"
-                    class="btn btn-modal greenBtn"
-                    id="startGame"
-                  >
-                    Start
-                  </button>
-                </form>
-              </div>
+              <ul>
+                <li>It's just like good ol' days</li>
+                <li>Hit a number on screen from 1-6 to bowl/bat</li>
+                <li>
+                  If you and computer land the same number, innings is over
+                </li>
+                <li>Just hit the Start and you will understand the rest</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <form action="game" method="GET">
+                <button type="submit" class="btn btn-modal greenBtn" id="startGame">
+                  Start
+                </button>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
-        <div
-          class="modal fade"
-          id="usernameModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="usernameModalTitle"
-          aria-hidden="true"
-          data-controls-modal="usernameModal"
-          data-backdrop="static"
-          data-keyboard="false"
-        >
-          <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="usernameModalTitle">
-                  Enter a username
-                </h5>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label class="col-form-label">Enter a Username:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    placeholder="Deafult is Joemama"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="modal-footer">
-                <div
-                  class="alert alert-danger alert-dismissible fade hide"
-                  role="alert"
-                  id="messageALert"
-                >
-                  <strong id="dbMessage"> </strong>
-                </div>
-                <form action="/" method="GET"></form>
-                <button
-                  class="btn btn-modal greenBtn disabled"
-                  disabled
-                  id="userBtn"
-                >
+      <div class="modal fade" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="usernameModalTitle"
+        aria-hidden="true" data-controls-modal="usernameModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="usernameModalTitle">
+                Enter a username
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="col-form-label">Enter a Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Deafult is Joemama" required />
+                <button class="btn btn-modal greenBtn disabled" disabled id="userBtn">
                   Continue
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <h2 class="welcome">
-          Choose <span class="gold">Paanch</span> or
-          <span class="gold">Chaand </span>and click the Coin for Toss
-        </h2>
-        <div class="users">
-          <div class="player">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-choice">
-                <input
-                  type="radio"
-                  name="options"
-                  id="paanch"
-                  autocomplete="off"
-                  onchange="enableToss()"
-                />
-                Paanch
-              </label>
-              <label class="btn btn-choice">
-                <input
-                  type="radio"
-                  name="options"
-                  id="chaand"
-                  autocomplete="off"
-                  onchange="enableToss()"
-                />
-                Chaand
-              </label>
+            <div class="modal-footer">
+              <div class="aler alert-dismissible fade hide" role="alert" id="messageALert">
+                <strong id="dbMessage"> </strong>
+              </div>
+              <button class="btn btn-modal btn-primary" id="signIn">
+                Sign in
+              </button>
             </div>
           </div>
         </div>
-        <div id="coin">
-          <div class="side-a"></div>
-          <div class="side-b"></div>
-        </div>
-      </main>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      </div>
 
-    <script src="static/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#usernameModal").modal("show");
+      <h2 class="welcome">
+        Choose <span class="gold">Paanch</span> or
+        <span class="gold">Chaand </span>and click the Coin for Toss
+      </h2>
+      <div class="users">
+        <div class="player">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-choice">
+              <input type="radio" name="options" id="paanch" autocomplete="off" onchange="enableToss()" />
+              Paanch
+            </label>
+            <label class="btn btn-choice">
+              <input type="radio" name="options" id="chaand" autocomplete="off" onchange="enableToss()" />
+              Chaand
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="coin">
+        <div class="side-a"></div>
+        <div class="side-b"></div>
+      </div>
+    </main>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="static/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#usernameModal").modal("show");
+    });
+    document
+      .getElementById("username")
+      .addEventListener("keyup", function () {
+        var nameInput = document.getElementById("username").value;
+        if (nameInput != "") {
+          document.getElementById("userBtn").removeAttribute("disabled");
+          document.getElementById("userBtn").classList.remove("disabled");
+        } else {
+          document.getElementById("userBtn").setAttribute("disabled", null);
+          document.getElementById("userBtn").classList.add("disabled");
+        }
       });
-      document
-        .getElementById("username")
-        .addEventListener("keyup", function () {
-          var nameInput = document.getElementById("username").value;
-          if (nameInput != "") {
-            document.getElementById("userBtn").removeAttribute("disabled");
-            document.getElementById("userBtn").classList.remove("disabled");
-          } else {
-            document.getElementById("userBtn").setAttribute("disabled", null);
-            document.getElementById("userBtn").classList.add("disabled");
-          }
-        });
-    </script>
-    <script src="static/js/app.js"></script>
-  </body>
+  </script>
+  <script src="static/js/app.js"></script>
+</body>
+
 </html>

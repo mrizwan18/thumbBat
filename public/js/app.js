@@ -78,14 +78,16 @@ $("#userBtn").click(function () {
       console.log(data, status)
       if (data == "200") {
         $("#dbMessage").html("User successfully created.");
-        $("#messageALert").addClass("show");
+        $("#messageALert").removeClass("alert-danger");
+        $("#messageALert").addClass("show alert-success");
         setTimeout(function () {
           $("#usernameModal").modal("hide");
         }, 2000);
         localStorage.setItem("username", username);
       } else {
-        $("#dbMessage").html("Username " + username + " already exists, try another");
-        $("#messageALert").addClass("show");
+        $("#dbMessage").html("Username " + username + " already exists, try signing in");
+        $("#messageALert").removeClass("alert-success");
+        $("#messageALert").addClass("show alert-danger");
       }
     });
 
